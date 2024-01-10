@@ -18,10 +18,8 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body className={roboto.className}>
-            <div className="px-60 py-20">
                <Header />
                {children}
-            </div>
          </body>
       </html>
    );
