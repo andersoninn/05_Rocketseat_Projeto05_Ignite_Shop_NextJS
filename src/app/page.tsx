@@ -1,29 +1,55 @@
-'use client';
-import Product from '@/components/products/Product';
-import { useKeenSlider } from 'keen-slider/react';
+import { stripe } from "@/assets/lib/stripe";
+import MainProducts from "@/components/MainProducts";
+import Stripe from "stripe";
 
-// import 'keen-slider/keen-slider.min.css';
+export default async function Home() {
+   const response = await stripe.products.list({
+         expand: ['data.default_price'],
+      });
 
-export default function Home() {
-   const [sliderRef] = useKeenSlider({
-      slides: {
-         perView: 'auto',
-         spacing: 48, 
-      },
-   });
+      // const products = response.data.map((product) => {
+         let products = [];
+      for(const product of response.data){
+         const price = product.default_price as Stripe.Price;
+   
+         products.push({
+            id: product.id,
+            name: product.name,
+            imageURL: product.images[0],
+            price: price.unit_amount && price.unit_amount / 100,
+         }) ;
+      };
+      
+      
+
    return (
       <>
          <main className="ps-60">
-            <section
-               className="flex overflow-x-hidden overflow-y-hidden keen-slider"
-               ref={sliderRef}
-            >
-               <Product />
-               <Product />
-               <Product />
-               <Product />
-            </section>
+           <MainProducts products={products} />
          </main>
       </>
    );
 }
+
+// export const getServerSideProps: GetServerSideProps = async () => {
+   
+//    const response = await stripe.products.list({
+//       expand: ['data.default_price'],
+//    });
+
+//    const products = response.data.map((product) => {
+//       const price = product.default_price as Stripe.Price;
+
+//       return {
+//          id: product.id,
+//          name: product.name,
+//          imageURL: product.images[0],
+//          price: price.unit_amount && price.unit_amount / 100,
+//       };
+//    });
+//    return {
+//       props: {
+//          products,
+//       },
+//    };
+// };
