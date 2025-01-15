@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛍️ Ignite Shop - Marketplace
 
-## Getting Started
+Este projeto é um **marketplace** desenvolvido durante o módulo de **Fundamentos do Next.js**, utilizando **TypeScript**. O objetivo foi aplicar os conceitos do Next.js e entender as principais funcionalidades, como roteamento dinâmico, renderização server-side, entre outros.
 
-First, run the development server:
+## 🛠️ Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js**: Framework React para renderização server-side e geração estática.
+- **TypeScript**: Tipagem estática para maior segurança e escalabilidade no código.
+- **Styled-Components**: Para estilização dinâmica e modular da interface.
+- **Axios**: Para consumo de APIs e integração com backend.
+- **Stripe**: Integração de pagamentos para compra de produtos.
+- **React Context**: Para gerenciamento de estado global (exemplo: carrinho de compras).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Funcionalidades
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Exibição de produtos**: Lista de produtos com detalhes e preços.
+- **Roteamento dinâmico**: Páginas específicas de produtos usando o roteamento baseado em URL dinâmica.
+- **Carrinho de compras**: Adicionar produtos ao carrinho e realizar a compra.
+- **Integração com Stripe**: Pagamento dos produtos através do Stripe.
+- **Interface moderna e responsiva**: Foco em uma interface amigável e fácil de navegar.
+- **Renderização eficiente**: Utilização das funcionalidades do Next.js como SSR (Server-Side Rendering) para melhorar a performance e a SEO.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🚀 Como Usar
 
-## Learn More
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/andersoninn/05_Rocketseat_Projeto05_Ignite_Shop_NextJS.git
 
-To learn more about Next.js, take a look at the following resources:
+2. Instale as dependências:
+   ```bash
+   npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Inicie a aplicação:
+   ```bash
+   npm run dev
+ 
+4. Abra o navegador e acesse:
+   ```bash
+   http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📝 Lições Aprendidas
+Implementação de rotas dinâmicas com Next.js para páginas de produtos.
+Como utilizar a renderização server-side (SSR) para melhorar a performance e SEO.
+Integração de métodos de pagamento utilizando Stripe para simular compras online.
+Aplicação de boas práticas de tipagem estática no desenvolvimento com TypeScript.
+Criação de uma experiência de compra fluida e responsiva, utilizando Styled-Components para o design dinâmico.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+✨ **Vamos nos conectar!**  
+Se você gostou do projeto ou quer trocar ideias, [me encontre no LinkedIn](https://www.linkedin.com/in/andersoninn/). 😊
